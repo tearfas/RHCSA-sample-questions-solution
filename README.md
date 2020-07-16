@@ -3,20 +3,24 @@ RHCSA sample questions/solution -- http://www.certificationking.com/download/RHC
 
 
 Question: 1   
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 Configure your Host Name, IP Address, Gateway and DNS.
-Host name: station.domain40.example.com
-/etc/sysconfig/network
-hostname=abc.com
-hostname abc.com
-IP Address:172.24.40.40/24
-Gateway172.24.40.1
-DNS:172.24.40.1  
+Host name: rhcsa.dellatechglobal.com                  
+IP Address: 192.168.0.57/24                 
+Gateway: 192.168.0.1                                 
+DNS:192.168.0.1                                  
+DNS Search: dellatechglobal.com  
   
  
  
 Question: 2   
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 Add 3 users: harry, natasha, tom.
 The requirements: The Additional group of the two users: harry, Natasha is the admin
 group. The user: tom's login shell should be non‐interactive.  
