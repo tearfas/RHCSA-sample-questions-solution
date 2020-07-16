@@ -1,0 +1,14 @@
+############################################################
+#### Add 3 users: harry, natasha, tom. The requirements: ###
+#### The Additional group of the two users: harry,       ###
+#### Natasha is the admin group. The user: tom's login   ###
+#### shell should be non‐interactive.                    ###
+############################################################
+
+# for i in harry natasha tom; do useradd $i; done
+# groupadd admin
+# for i in harry natasha; do usermod -aG admin $i; done
+# id harry
+# id natasha
+# usermod -s /sbin/nologin tom
+# getent passwd tom
