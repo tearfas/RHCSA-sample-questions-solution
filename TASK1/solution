@@ -1,0 +1,43 @@
+##############################################################
+#### Configure your Host Name, IP Address, Gateway and DNS.###
+#### Host name: rhcsa.dellatechglobal.com                  ###
+#### IP Address:192.168.0.57/24                            ###
+#### Gateway192.168.0.1                                    ###
+#### DNS:192.168.0.1                                       ###
+#### DNS Search dellatechglobal.com                        ###
+##############################################################
+
+1.	Find out your interface name (the 3 commands below will yield the result)
+       	 # nmcli c s
+       	 #  nmcli con show
+       	 #  nmcli connection show
+       	 #  NB: in my case my interface name is eth0
+       	 
+       	 #  2.	 Assign the desired ip address (eg. 198.162.0.57)
+       	 # nmcli con modify eth0 ipv4.addresses 192.168.0.57/24    
+       	 #  NB. The /24 assigns a subnet of 255.255.255.0 
+       	 
+         #  3.	Assign a gateway
+       	 # nmcli con modify eth0 ipv4.gateway 192.168.0.1
+       	 
+         #  4.	Assign DNS
+       	 
+         # nmcli con modify eth0 ipv4.dns 192.168.0.1
+       	 
+         #  5.	Make it static 
+       	 # nmcli con modify eth0 ipv4.method manual
+       	 
+         #  6.	Assign DNS search
+       	 # nmcli con modify eth0 ipv4.dns-serach dellatechglobal.com
+       	 
+         #  7.	Set the interface to be up on boot
+       	 # nmcli con modify connection.autoconnect yes
+       	 
+         #  8.	Restart the network 
+       	 #  # systemctl restart network
+       	 
+         #  9.	Verify 
+       	 #  # ip a 
+ 
+         # 10. Set the hostname
+         # hostnamectl set-hostname rhcsa.dellatechglobal.com --static
